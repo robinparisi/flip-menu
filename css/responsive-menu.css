@@ -1,0 +1,132 @@
+.rm-header,
+.back {
+    display: block;
+}
+
+.rm-phone-hidden {
+    display: none;
+}
+
+/* ----------------------------- */
+/* ==header */
+/* ----------------------------- */
+
+.rm-header {
+    overflow: hidden;
+    padding-left: 1em;
+    height: 50px;
+    background-color: #2c3e50;
+    text-transform: uppercase;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    line-height: 50px;
+}
+
+.rm-title {
+    color: #ecf0f1;
+}
+
+/* clear floats */
+.rm-header:after{
+    display: table;
+    clear: both;
+    content: "";
+}
+
+.btn-menu,
+.btn-menu {
+    display: block;
+    float: right;
+    width: 6em;
+    background-color: #e74c3c;
+    color: #ffffff !important;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* ----------------------------- */
+/* ==flip */
+/* ----------------------------- */
+
+body {
+    perspective: 1000; /* keep perspective (animation seems better on body) */
+}
+
+.flipper {
+    position: relative;
+    transition: 0.3s; /* rotation speed */
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    position: absolute; /*cards need to be superimposed*/
+    top: 0;
+    right: 0;
+    left: 0;
+    backface-visibility: hidden; /* hide backface */
+}
+
+.front {
+    z-index: 10; /* display first*/
+}
+
+.back {
+    background-color: darkcyan;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    transform: rotateY(180deg);
+}
+
+/* ----------------------------- */
+/* ==menu */
+/* ----------------------------- */
+
+.back nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.back nav ul li {
+    display: block;
+    background-color: #ecf0f1;
+    text-transform: capitalize;
+}
+
+.back nav ul li:nth-child(odd) {
+    background-color: #e0e4e5;
+}
+
+.back nav ul li a {
+    display: block;
+    padding: 1.5em 2em;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+
+/* ----------------------------- */
+/* ==states */
+/* ----------------------------- */
+
+/* fix a strange bug which appears with some Android browsers (http://codepen.io/robinparisi/pen/eFncK) */
+[data-state] {}
+
+body[data-state=back] .flipper {
+    transform: rotateY(180deg);
+}
+
+body[data-state=front] .btn-menu-show { display: block; }
+body[data-state=front] .btn-menu-hide { display: none; }
+body[data-state=back] .btn-menu-show { display: none; }
+body[data-state=back] .btn-menu-hide { display: block; }
+
+/* ----------------------------- */
+/* ==fallback */
+/* ----------------------------- */
+
+.no-js .front,
+.no-js .back,
+.no-csstransforms3d .front,
+.no-csstransforms3d .back {
+    position: static;
+    transform: none;
+}

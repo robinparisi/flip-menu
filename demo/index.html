@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive menu</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/demo.css">
+    <style>
+        .rm-header, .back {
+            display: none;
+        }
+
+    </style>
+    <link rel="stylesheet" media="(max-width: 768px)" href="../build/responsive-menu.css">
+
+</head>
+<body data-state="front">
+
+<header class="rm-header">
+    <span class="rm-title">Bazinga</span>
+    <a class="btn-menu" href="#rm-menu">
+        <span class="btn-menu-show">menu</span>
+        <span class="btn-menu-hide">retour</span>
+    </a>
+</header>
+
+<div class="flipper">
+
+    <!-- Main content -->
+    <div class="front">
+        <nav class="rm-phone-hidden">
+            <ul>
+                <li><a href="#">rock</a></li>
+                <li><a href="#">paper</a></li>
+                <li><a href="#">scissors</a></li>
+                <li><a href="#">lizard</a></li>
+                <li><a href="#">spock</a></li>
+            </ul>
+        </nav>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+    </div>
+    <!-- Main cointent -->
+
+    <!-- Mobile menu -->
+    <div class="back">
+        <nav id="rm-menu">
+            <ul>
+                <li><a href="#">rock</a></li>
+                <li><a href="#">paper</a></li>
+                <li><a href="#">scissors</a></li>
+                <li><a href="#">lizard</a></li>
+                <li><a href="#">spock</a></li>
+                <li><a href="#">just for mobile</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- /Mobile Menu -->
+</div>
+
+<script src="../js/responsive-menu.js"></script>
+
+<script>
+    ResponsiveMenu.init('.btn-menu');
+</script>
+</body>
+</html>
