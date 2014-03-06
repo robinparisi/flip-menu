@@ -3,13 +3,8 @@
     "version": "0.0.1",
     "devDependencies": {
         "grunt": "latest",
-        "grunt-contrib-concat": "latest",
         "grunt-contrib-uglify": "latest",
-        "grunt-contrib-imagemin": "latest",
-        "grunt-contrib-less": "latest",
         "grunt-contrib-watch": "latest",
-        "grunt-autoprefixer": "latest",
-        "grunt-contrib-clean": "latest",
-        "grunt-contrib-copy": "latest"
+        "grunt-autoprefixer": "latest"
     }
 }
